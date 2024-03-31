@@ -14,3 +14,12 @@ function searchContacts() {
         }
       }
     }
+function showForm() {
+      var contactForm = document.getElementById("contactForm");
+      contactForm.style.display = "block";
+    }
+
+    function hideForm() {
+      var contactForm = document.getElementById("contactForm");
+      contactForm.style.display = "none";
+    }
