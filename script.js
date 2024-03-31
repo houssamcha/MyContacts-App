@@ -23,3 +23,24 @@ function showForm() {
       var contactForm = document.getElementById("contactForm");
       contactForm.style.display = "none";
     }
+function addContact() {
+      var name = document.getElementById("name").value;
+      var email = document.getElementById("email").value;
+      var phone = document.getElementById("phone").value;
+
+      var contactList = document.getElementById("contactList");
+      var newContact = document.createElement("div");
+      newContact.classList.add("contact");
+
+      newContact.innerHTML = `
+        <div class="contact-avatar"><img src="avatar3.jpg" alt="Avatar"></div>
+        <div class="contact-details">
+          <h2>${name}</h2>
+          <p>Email: ${email}</p>
+          <p>Phone: ${phone}</p>
+        </div>
+      `;
+
+      contactList.appendChild(newContact);
+      hideForm(); // Close the form after adding the contact
+    }
