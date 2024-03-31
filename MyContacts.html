@@ -17,7 +17,23 @@
         </div>
         <!-- add contact button -->
         <button class="add-contact-btn" onclick="showForm()">Add Contact</button>
-        
+        <!-- here is the form that show up after the user click on the add button -->
+        <div class="form-popup" id="contactForm" style="display: none;">
+            <form class="form-container">
+              <h2>Add New Contact</h2>
+              <label for="name"><b>Name</b></label>
+              <input type="text" placeholder="Enter Name" id="name" required>
+      
+              <label for="email"><b>Email</b></label>
+              <input type="text" placeholder="Enter Email" id="email" required>
+      
+              <label for="phone"><b>Phone</b></label>
+              <input type="text" placeholder="Enter Phone" id="phone" required>
+      
+              <button type="button" class="btn" onclick="addContact()">Add</button>
+              <button type="button" class="btn cancel" onclick="hideForm()">Close</button>
+            </form>
+          </div>
     </div>
 </body>
 </html>
