@@ -7,6 +7,16 @@
 </head>
 <body>
     <div class="container">
+        <!-- thats my search input -->
+        <div class="search-container">
+            <input type="text" id="searchInput" placeholder="Search..." oninput="searchContacts()">
+        </div>
+        <!-- contacts gnna show up here -->
+        <div class="contact-list" id="contactList">
+            <!-- Contacts will be dynamically populated here -->
+        </div>
+        <!-- add contact button -->
+        <button class="add-contact-btn" onclick="showForm()">Add Contact</button>
         
     </div>
 </body>
