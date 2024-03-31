@@ -44,3 +44,25 @@ function addContact() {
       contactList.appendChild(newContact);
       hideForm(); // Close the form after adding the contact
     }
+// Fetch contacts from the API and populate the contact list
+    fetch('https://randomuser.me/api/?results=5') // Fetch 5 random users
+      .then(response => response.json())
+      .then(data => {
+        const contactList = document.getElementById("contactList");
+        data.results.forEach(user => {
+          const newContact = document.createElement("div");
+          newContact.classList.add("contact");
+          newContact.innerHTML = `
+            <div class="contact-avatar"><img src="${user.picture.large}" alt="Avatar"></div>
+            <div class="contact-details">
+              <h2>${user.name.first} ${user.name.last}</h2>
+              <p>Email: ${user.email}</p>
+              <p>Phone: ${user.phone}</p>
+            </div>
+          `;
+          contactList.appendChild(newContact);
+        });
+      })
+      .catch(error => {
+        console.error('Error fetching data:', error);
+      });
